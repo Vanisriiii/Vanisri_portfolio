@@ -40,7 +40,7 @@ function Hero() {
   };
 
   useEffect(() => {
-    const hero = document.getElementById("hero");
+    const hero = document.getElementById("Home");
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -62,7 +62,7 @@ function Hero() {
   return (
     <section
       id="Home"
-      className="relative min-h-screen w-full overflow-hidden bg-black"
+      className="relative min-h-[100svh] w-full overflow-hidden bg-black"
     >
       {/* Background Video */}
       <video
@@ -88,24 +88,23 @@ function Hero() {
       <motion.div
         animate={{ y: [0, -40, 0], x: [0, 25, 0] }}
         transition={{ repeat: Infinity, duration: 12 }}
-        className="absolute left-20 top-20 h-3 w-3 rounded-full bg-violet-400 shadow-[0_0_20px_#8b5cf6]"
+        className="absolute left-6 sm:left-20 top-20 h-3 w-3 rounded-full bg-violet-400 shadow-[0_0_20px_#8b5cf6]"
       />
 
       <motion.div
         animate={{ y: [0, 50, 0], x: [0, -25, 0] }}
         transition={{ repeat: Infinity, duration: 15 }}
-        className="absolute right-24 top-36 h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_20px_#38bdf8]"
+        className="absolute right-6 sm:right-24 top-36 h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_20px_#38bdf8]"
       />
 
       {/* Hero Content */}
-      <div className="relative z-20 flex min-h-screen items-center justify-center px-6">
+      <div className="relative z-20 flex min-h-[100svh] items-center justify-center px-5 sm:px-6">
         <div className="w-full max-w-5xl text-center">
-
           <motion.h1
             initial={{ opacity: 0, y: 45, letterSpacing: "0.15em" }}
             animate={{ opacity: 1, y: 0, letterSpacing: "0.04em" }}
             transition={{ duration: 0.9 }}
-            className="text-[2.7rem] sm:text-[3.6rem] md:text-[4.8rem] lg:text-[4.8rem] font-black text-white tracking-tight leading-none"
+            className="text-[2.2rem] sm:text-[3.6rem] md:text-[4.8rem] lg:text-[4.8rem] font-black text-white tracking-tight leading-tight"
           >
             DHARMARAPU VANISRI
           </motion.h1>
@@ -114,7 +113,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
-            className="mt-5 text-lg md:text-2xl font-light text-gray-200"
+            className="mt-5 text-base sm:text-lg md:text-2xl font-light text-gray-200"
           >
             Aspiring Data Analyst
           </motion.p>
@@ -123,14 +122,12 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.55 }}
-            className="mt-2 text-sm md:text-base text-gray-400"
+            className="mt-2 text-xs sm:text-sm md:text-base text-gray-400"
           >
             B.S. Chemical Sciences • Indian Institute of Technology Mandi
           </motion.p>
-
         </div>
-
-        {/* Play / Pause Button */}
+                {/* Play / Pause Button */}
         <motion.button
           onClick={playing ? handlePause : handlePlay}
           initial={{ opacity: 0, scale: 0.7 }}
@@ -138,7 +135,7 @@ function Hero() {
           transition={{ delay: 0.9 }}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
-          className="absolute bottom-8 right-8 z-30 flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-xl hover:bg-violet-500/20 transition"
+          className="absolute bottom-5 right-5 sm:bottom-8 sm:right-8 z-30 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-xl transition hover:bg-violet-500/20"
         >
           {playing ? (
             <Pause size={20} fill="white" className="text-white" />
@@ -152,7 +149,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 sm:bottom-8"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -186,7 +183,7 @@ function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.2, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.6 }}
-        className="absolute right-16 top-20 h-72 w-72 rounded-full border border-violet-400/10"
+        className="hidden sm:block absolute right-16 top-20 h-72 w-72 rounded-full border border-violet-400/10"
       />
 
       {/* Glow */}

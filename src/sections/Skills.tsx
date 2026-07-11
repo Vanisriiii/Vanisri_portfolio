@@ -45,13 +45,13 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="relative min-h-screen overflow-hidden bg-[#050505] flex items-center justify-center py-24"
+      className="relative min-h-[100svh] overflow-hidden bg-[#050505] flex items-center justify-center py-16 sm:py-20 md:py-24"
     >
       {/* Background Glow */}
       <div className="absolute -left-52 top-0 h-[500px] w-[500px] rounded-full bg-violet-700/15 blur-[180px]" />
       <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-violet-600/10 blur-[190px]" />
-      <div className="absolute right-20 top-24 h-72 w-72 rounded-full border border-violet-500/10" />
-      <div className="absolute left-20 bottom-20 h-44 w-44 rounded-full border border-violet-500/10" />
+      <div className="hidden sm:block absolute right-20 top-24 h-72 w-72 rounded-full border border-violet-500/10" />
+      <div className="hidden sm:block absolute left-20 bottom-20 h-44 w-44 rounded-full border border-violet-500/10" />
 
       {/* Floating Particles */}
       {particles.map((particle, i) => (
@@ -96,15 +96,15 @@ function Skills() {
         }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="relative z-20 w-full max-w-7xl px-10"
+        className="relative z-20 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10"
       >
         {/* Heading */}
-        <p className="text-center text-xl md:text-2xl uppercase tracking-[0.45em] font-semibold text-violet-400 drop-shadow-[0_0_18px_rgba(139,92,246,0.9)]">
+        <p className="text-center text-lg sm:text-xl md:text-2xl uppercase tracking-[0.25em] sm:tracking-[0.45em] font-semibold text-violet-400 drop-shadow-[0_0_18px_rgba(139,92,246,0.9)]">
           SKILLS
         </p>
 
-        <div className="mt-12 space-y-5">
-                      {categories.map((category, index) => (
+        <div className="mt-10 sm:mt-12 space-y-5">
+                    {categories.map((category, index) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 35 }}
@@ -118,41 +118,41 @@ function Skills() {
                 borderColor: "rgba(139,92,246,0.45)",
                 boxShadow: "0 0 20px rgba(139,92,246,0.08)",
               }}
-              className="rounded-xl border border-violet-500/20 bg-[#0B0B0B] px-10 py-6"
+              className="rounded-2xl border border-violet-500/20 bg-[#0B0B0B] p-5 sm:px-8 sm:py-6 transition-all duration-300"
             >
-              <div className="flex items-center">
+              <div className="flex flex-col md:flex-row md:items-center">
 
                 {/* Category */}
-                <div className="flex w-[470px] flex-shrink-0 items-center gap-5">
+                <div className="flex w-full md:w-[470px] flex-shrink-0 items-center gap-4 sm:gap-5">
 
-                  <span className="text-[34px]">
+                  <span className="text-3xl sm:text-[34px]">
                     {category.icon}
                   </span>
 
-                  <h3 className="w-[270px] text-[31px] font-semibold text-violet-400">
+                  <h3 className="flex-1 md:w-[270px] text-xl sm:text-2xl md:text-[31px] font-semibold text-violet-400">
                     {category.title}
                   </h3>
 
-                  <span className="text-[32px] font-bold text-violet-400">
+                  <span className="hidden md:block text-[32px] font-bold text-violet-400">
                     :
                   </span>
 
                 </div>
 
                 {/* Skills */}
-                <div className="flex flex-1 items-center whitespace-nowrap overflow-x-auto">
+                <div className="mt-5 md:mt-0 flex flex-wrap gap-3 md:flex-1 md:items-center md:gap-0">
 
                   {category.skills.map((skill, skillIndex) => (
                     <span
                       key={skill}
                       className="flex items-center"
                     >
-                      <span className="text-[24px] font-medium text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.45)] hover:text-violet-300 transition-all duration-300">
+                      <span className="rounded-full border border-violet-500/30 bg-violet-500/5 px-4 py-2 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:border-violet-400 hover:text-violet-300 md:rounded-none md:border-0 md:bg-transparent md:px-0 md:py-0 md:text-[24px] md:drop-shadow-[0_0_10px_rgba(255,255,255,0.45)]">
                         {skill}
                       </span>
 
                       {skillIndex !== category.skills.length - 1 && (
-                        <span className="mx-5 text-[24px] font-bold text-violet-500">
+                        <span className="hidden md:inline mx-5 text-[24px] font-bold text-violet-500">
                           |
                         </span>
                       )}
@@ -164,8 +164,8 @@ function Skills() {
               </div>
             </motion.div>
           ))}
-                  </div>
-      </motion.div>
+        </div>
+              </motion.div>
 
       {/* Bottom Glow */}
       <motion.div
@@ -173,10 +173,11 @@ function Skills() {
         whileInView={{ opacity: 1, scaleX: 1 }}
         transition={{ delay: 1.3, duration: 1 }}
         viewport={{ once: true }}
-        className="absolute bottom-10 left-1/2 h-[2px] w-[82%] -translate-x-1/2 origin-center rounded-full bg-gradient-to-r from-transparent via-violet-500 to-transparent"
+        className="absolute bottom-10 left-1/2 h-[2px] w-[90%] sm:w-[82%] -translate-x-1/2 origin-center rounded-full bg-gradient-to-r from-transparent via-violet-500 to-transparent"
       />
     </section>
   );
 }
 
 export default Skills;
+        

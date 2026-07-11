@@ -35,13 +35,13 @@ function Education() {
   return (
     <section
       id="education"
-      className="relative min-h-screen bg-[#050505] overflow-hidden flex items-center justify-center py-24"
+      className="relative min-h-[100svh] overflow-hidden bg-[#050505] flex items-center justify-center py-16 sm:py-20 md:py-24"
     >
       {/* Background Glow */}
       <div className="absolute -left-52 top-0 h-[500px] w-[500px] rounded-full bg-violet-700/15 blur-[180px]" />
       <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-violet-600/10 blur-[190px]" />
-      <div className="absolute right-20 top-24 h-72 w-72 rounded-full border border-violet-500/10" />
-      <div className="absolute left-20 bottom-20 h-44 w-44 rounded-full border border-violet-500/10" />
+      <div className="hidden sm:block absolute right-20 top-24 h-72 w-72 rounded-full border border-violet-500/10" />
+      <div className="hidden sm:block absolute left-20 bottom-20 h-44 w-44 rounded-full border border-violet-500/10" />
 
       {/* Floating Particles */}
       {particles.map((particle, i) => (
@@ -90,7 +90,7 @@ function Education() {
           duration: 1,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className="relative z-20 max-w-4xl px-8 text-center"
+        className="relative z-20 mx-auto w-full max-w-4xl px-5 sm:px-8 text-center"
       >
         {/* Heading */}
         <motion.p
@@ -98,7 +98,7 @@ function Education() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-xl md:text-2xl uppercase tracking-[0.45em] font-semibold text-blue-400 drop-shadow-[0_0_18px_rgba(139,92,246,0.9)]"
+          className="text-lg sm:text-xl md:text-2xl uppercase tracking-[0.25em] sm:tracking-[0.45em] font-semibold text-blue-400 drop-shadow-[0_0_18px_rgba(139,92,246,0.9)]"
         >
           EDUCATION
         </motion.p>
@@ -109,7 +109,7 @@ function Education() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-20 flex flex-col gap-8"
+          className="mt-12 sm:mt-20 flex flex-col gap-6 sm:gap-8"
         >
           {education.map((item, index) => (
             <motion.div
@@ -118,23 +118,26 @@ function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="rounded-3xl border border-violet-500/20 bg-[#0B0B0B] p-8 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300"
+              className="rounded-2xl sm:rounded-3xl border border-violet-500/20 bg-[#0B0B0B] p-5 sm:p-8 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300"
             >
               <div className="flex justify-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-violet-600 shadow-lg shadow-violet-500/30">
-                  <GraduationCap className="text-white" size={28} />
+                <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-violet-600 shadow-lg shadow-violet-500/30">
+                  <GraduationCap
+                    className="text-white"
+                    size={22}
+                  />
                 </div>
               </div>
 
-              <h3 className="mt-6 text-2xl font-bold text-white">
+              <h3 className="mt-5 text-xl sm:text-2xl font-bold text-white leading-snug">
                 {item.institute}
               </h3>
 
-              <p className="mt-2 text-lg text-violet-400">
+              <p className="mt-2 text-base sm:text-lg text-violet-400">
                 {item.degree}
               </p>
 
-              <p className="mt-4 text-gray-400">
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-400">
                 {item.duration} • {item.score}
               </p>
             </motion.div>
@@ -148,7 +151,7 @@ function Education() {
         whileInView={{ opacity: 1, scaleX: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
         viewport={{ once: true }}
-        className="absolute bottom-10 left-1/2 h-[2px] w-[80%] -translate-x-1/2 origin-center rounded-full bg-gradient-to-r from-transparent via-violet-500 to-transparent"
+        className="absolute bottom-10 left-1/2 h-[2px] w-[90%] sm:w-[80%] -translate-x-1/2 origin-center rounded-full bg-gradient-to-r from-transparent via-violet-500 to-transparent"
       />
     </section>
   );
