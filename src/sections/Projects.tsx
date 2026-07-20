@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import {
+  Database,
   ShoppingCart,
   Smartphone,
   Pizza,
@@ -31,6 +32,15 @@ const particles: Particle[] = [...Array(18)].map(() => ({
 }));
 
 const projects = [
+  {
+  icon: Database,
+  title: "DataLens AI",
+  description:
+    "Built an interactive data quality and preparation application that helps users inspect datasets, identify missing values and duplicate records, calculate a Data Health Score based on completeness, uniqueness, and consistency, and transform raw data into cleaner, analysis-ready datasets through interactive cleaning workflows.",
+  tech: "Python • Streamlit • Pandas",
+  github: "https://github.com/Vanisriiii/DataLens-AI",
+  liveDemo: "https://datalens-ai-bg9yjf6r7fu3amukptsc92.streamlit.app/",
+},
   {
     icon: ShoppingCart,
     title: "Retail Sales Analysis",
