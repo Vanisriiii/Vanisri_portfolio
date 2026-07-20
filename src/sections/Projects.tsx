@@ -275,18 +275,34 @@ function Projects() {
                       {project.tech}
                     </p>
 
-                    {/* GitHub */}
-                    <div className="mt-8 sm:mt-10 flex justify-center">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold text-yellow-400 transition-all duration-300 hover:text-yellow-300 hover:scale-105"
-                      >
-                        <FaGithub size={isMobile ? 22 : 26} />
-                        <span>GitHub</span>
-                      </a>
-                    </div>
+                    {/* Project Links */}
+<div className="mt-8 sm:mt-10 flex justify-center gap-6 sm:gap-8">
+
+  {/* GitHub */}
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold text-yellow-400 transition-all duration-300 hover:text-yellow-300 hover:scale-105"
+  >
+    <FaGithub size={isMobile ? 22 : 26} />
+    <span>GitHub</span>
+  </a>
+
+  {/* Live Demo - Only for projects with a liveDemo link */}
+  {project.liveDemo && (
+    <a
+      href={project.liveDemo}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold text-blue-400 transition-all duration-300 hover:text-blue-300 hover:scale-105"
+    >
+      🚀
+      <span>Live Demo</span>
+    </a>
+  )}
+
+</div>
                   </motion.div>
                 ))}
               </motion.div>
