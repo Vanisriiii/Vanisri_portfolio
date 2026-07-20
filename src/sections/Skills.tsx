@@ -27,8 +27,8 @@ const categories = [
   },
   {
     icon: "🛠️",
-    title: "Tools",
-    skills: ["Git", "GitHub", "VS Code", "Jupyter Notebook"],
+    title: "Frameworks & Tools",
+    skills: ["Streamlit", "Git", "GitHub", "VS Code", "Jupyter Notebook"],
   },
   {
     icon: "🧠",
